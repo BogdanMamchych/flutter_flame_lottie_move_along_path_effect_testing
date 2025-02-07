@@ -1,16 +1,14 @@
 # flutter_flame_lottie_move_along_path_effect_testing
 
-A new Flutter project.
+Тестування ефекту MoveAlongPathEffect на Flame. Flutter
 
-## Getting Started
+## Опис
 
-This project is a starting point for a Flutter application.
+### MoveAlongPathEffect - переміщає компонент PositionComponent уздовж заданого шляху, відносно його поточної позиції. Шлях може мати нелінійні сегменти, але він повинен бути єдиним і неперервним. Рекомендується починати шлях з Vector2.zero(), щоб уникнути різких стрибків у позиції компонента.
 
-A few resources to get you started if this is your first Flutter project:
+## Атрибути
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### - path - список точок, що утворюють шлях. через який переміщується компонент. Сегмент може бути лінійним або кривим. Шлях повинен(ПОВИНЕН), бути НЕРОЗРИВНИМ. 
+### - controller - контроллер ефекту, в якому можна задати такі значення, як duration - тривалість(до речі, чим менше тривалість, тим більша швидкість), infinite - чи є ефект безкінечним, alternate - чи буде виконання в зворотній бік після виконання і т.д;
+### - absolute = true - прапор, який визначає шлях як абсолютий. Тобто ціль "стрибне" на початок шляху на початку, а потім піде цим шляхом, ніби це крива, намальована на полотні.
+### - oriented = true - прапор, який вказує не тільки рухатися по шляху, а й обертатися в напрямку, куди звернена крива в кожній точці.(Представляєете?!);
