@@ -10,20 +10,19 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     GameWidget(
-      game: MoveByEffectGame(),
+      game: MoveAlongPathEffectGame(),
     ),
   );
 }
 
 //Тестування ефекту MoveAlongPathEffect на анімації Lottie JSON;
-class MoveByEffectGame extends FlameGame {
+class MoveAlongPathEffectGame extends FlameGame {
   //Змінна для зміни сторони руху, щоб наш кубок не втік :)
   bool reset = false;
   @override
   Future<void> onLoad() async {
     //Перегляд позицій компонентів(при бажанні, можете увімкнути)
     debugMode = false;
-    bool reset = false;
     //Завантаження анімації та створення 'будівельного' віджету
     final LottieBuilder lottieBuilder = Lottie.asset('assets/win.json');
     //Компонування анімації, щоб Flame використовував анімації 
